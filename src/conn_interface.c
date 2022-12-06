@@ -232,6 +232,8 @@ void createSocketConnection(void (* initKeypress)())
     nopoll_ctx_unref(ctx);
     nopoll_cleanup_library();
     curl_global_cleanup();
+    free_server_list (&server_list);
+    set_server_list_null(&server_list);
 }
 
 void shutdownSocketConnection(char *reason) {
