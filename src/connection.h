@@ -61,7 +61,7 @@ extern parodusOnPingStatusChangeHandler on_ping_status_change;
 
 void set_server_list_null (server_list_t *server_list);
 int createNopollConnection(noPollCtx *, server_list_t *);
-
+void free_server_list(server_list_t *server_list);
 /**
  * @brief Interface to terminate WebSocket client connections and clean up resources.
  */

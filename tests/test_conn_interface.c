@@ -53,6 +53,11 @@ void set_server_list_null (server_list_t *server_list)
 	UNUSED(server_list);
 }
 
+void free_server_list (server_list_t *server_list)
+{
+	UNUSED(server_list);
+}
+
 int find_servers (server_list_t *server_list)
 {
 	UNUSED(server_list);
