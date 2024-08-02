@@ -26,7 +26,9 @@
 
 #include <pthread.h>
 #include <wrp-c.h>
+#ifdef ENABLE_WEBCFGBIN
 #include <rbus.h>
+#endif
 #ifdef __cplusplus
 extern "C" {
 #endif
@@ -44,9 +46,11 @@ typedef struct UpStreamMsg__
 /*----------------------------------------------------------------------------*/
 /*                             Function Prototypes                            */
 /*----------------------------------------------------------------------------*/
+#ifdef ENABLE_WEBCFGBIN
 int rbusRegCloudConnectionOnlineEvent();
 rbusError_t SendRbusEventCloudConnOnline();
 rbusError_t CloudConnectionSubscribeHandler(rbusHandle_t handle, rbusEventSubAction_t action, const char* eventName, rbusFilter_t filter, int32_t interval, bool* autoPublish);
+#endif
 void packMetaData();
 void *handle_upstream();
 void *processUpstreamMessage();
